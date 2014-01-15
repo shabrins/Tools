@@ -1,0 +1,13 @@
+
+       ======>HELP<======
+Usage: book_catalog.js [OPTION]...
+gives the Books in the bookcatalog.
+
+list     display all the Books in a inventory.
+add      add a Book to the inventory.
+remove   delete a Book from the  inventory.
+help      display this help
+
+
+Report bugs to <shabrins@thoughtworks.com>.
+

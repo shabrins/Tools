@@ -1,0 +1,14 @@
+Kapil Dev 24
+Mohinder Amarnath 23
+Kirti Azad 3
+Roger Binny 25
+Sunil Gavaskar 29
+Syed Kirmani 2 
+Madan Lal 30
+Sandeep Patil 24
+Balwinder Sandhu 28
+Yashpal Sharma 25
+Ravi Shastri 21
+Krishnamachari Srikkanth 26
+Sunil Valson 21
+Dilip Vengsarkar 26

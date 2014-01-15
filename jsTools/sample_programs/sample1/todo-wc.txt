@@ -1,0 +1,20 @@
+from text count
+	words
+	lines
+	characters
+	length of longest line
+read user input from command line
+	filename
+	options
+		-w
+		-l
+		-c
+		-L	
+process user input
+	map 
+		-w to word count
+		-l to line
+		-c to char
+		-L to length of longest line
+
+integrate user input to functionality

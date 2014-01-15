@@ -1,0 +1,10 @@
+int mylcm(int,int);
+int simple_int(int,int ,int );
+int fact(int);
+int comp_int(int, int , int );
+int fibbo(int);
+int atm_calc(int *adress,int amount,int currency_type[]);
+int cmpfunc (const void * a, const void * b);
+int cmpfunc_string (const void * a, const void * b);
+int cmpfunc_double (const void * a, const void * b);
+int cmpfunc_float (const void * a, const void * b);

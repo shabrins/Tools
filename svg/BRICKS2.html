@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+
+</head>
+<body>
+	<script type="text/javascript">
+	var height=600;
+	var width=1250;
+	var canvas=d3.select('body')
+				.append('svg')
+				.attr('height',height)
+				.attr('width',width)
+	var playarea=canvas.append('rect')
+				.attr('x',20)
+				.attr('y',20)
+				.attr('height',600)
+				.attr('width',1210)
+				.attr('fill','black');
+
+	 var color = d3.scale.linear()
+                  .domain([0,100])
+                  .range(["red","blue"]);
+
+//  Make Bricks
+	var bricks_height=30;
+	var bricks_width=80;
+	var starting_x=45;
+	var starting_y=30;
+	var bricks=[];
+		for(row=0;row<5;row++){
+			bricks[row]=[];
+			starting_x=45;
+			for(column=0;column<13;column++){
+				bricks[row][column]=canvas.append('rect')
+					.attr('x',starting_x)
+					.attr('y',starting_y)
+					.attr('height',bricks_height)
+					.attr('rx',9)
+			        .attr('ry',5)
+					.attr('fill','red');
+				starting_x+=(bricks_width+10);
+			}
+		starting_y+=(bricks_height+5);
+		}	
+
+	// Make Paddle
+	var paddle=canvas.append('rect')
+			.attr('x',600)
+			.attr('y',550)
+			.attr('height',15)
+			.attr('width',150)
+			.attr('fill','white')
+			.attr('rx',9)
+			.attr('ry',5);
+
+    // Make Ball
+	var ball=canvas.append('circle')
+				   .attr('cy',550)
+				   .attr('cx',670)
+				   .attr('r',10)
+				   .attr('fill','green')
+				   ball.transition()
+				   .duration(2000)
+				   .delay(300)
+                   .attr("cy",100)
+
+     setTimeout(function() 
+      { ball.transition().duration(2000).delay(300).attr("cy",540)},1250);
+
+			
+	</script>
+	</body>
+</html>

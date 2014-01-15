@@ -1,0 +1,25 @@
+___________________________TO DO__________________________________
+sort : entire line, -t' ' is default =>   (sort ppl.txt)
+-k   : sort by fields                =>   (sort ppl.txt -k3)
+-n   : sort by number                =>   (sort ppl.txt -k3 -n)
+-r   : sort reverse                  =>   (sort ppl.txt -r)
+-t   :sort by fields separators      =>   (sort ppl.txt -t',' -k3) 
+-c   : sort or not                   =>   (sort ppl.txt -k3 -n -c)
+
+sort using array.sort.
+create a sortlib.js with sort function.
+create a for loop to check the file is already sort or not(-c).
+use array.reverse for -r.
+validate and process user input.
+
+
+____________________________things left___________________________
+1.functionality for -n.
+               -n --> compare according to string numerical value, imply -b 
+2.handle user input.
+ 
+3.edge cases.
+
+4.main program.
+
+5.command line.

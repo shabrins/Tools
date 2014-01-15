@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Circles</title>
+	<script type="text/javascript" src="jquery-2.0.3.min.js"></script>
+</head>
+<body>
+	<input type='button' id='move' value='Popat samne'></input>
+	<input type='button' id='moveb' value='Popat piche'></input>
+	<div id='mainContent'></div>
+	<script type="text/javascript">
+		var circles = [	{cx:100,cy:100,r:40,colour:'green'},
+		{cx:130,cy:110,r:20,colour:'red'},
+		{cx:90,cy:90,r:10,colour:'white'},
+		{cx:92,cy:90,r:5,colour:'black'},
+		{cx:50,cy:160,r:50,colour:'green'},
+		{cx:50,cy:215,r:9,colour:'gray'},
+		{cx:25,cy:210,r:9,colour:'gray'}
+       ];
+
+    var ellipse =[{cx:50,cy:300,rx:100,ry:10,colour:'gray'}]; 
+
+	</script>
+	
+	<script type="text/javascript">
+
+		var appendHTML = function(html,c){
+			var template = '<circle cx="CX" cy="CY" r="RR" stroke="black" stroke-width="1" fill="CLR"/>';
+			html = html + template.replace(/CX/,c.cx).replace(/CY/,c.cy).replace(/RR/,c.r).replace(/CLR/,c.colour);	
+			return html;
+		};
+
+		var circlesHtml = circles.reduce(appendHTML,'');	
+		$('#mainContent').append('<svg width="400",height="300">'+circlesHtml+'</svg>');
+
+		var appendHTML_elipse = function(html,c){
+			var template = '<ellipse cx="CX" cy="CY" rx="RX"  ry="RY" stroke="black" stroke-width="1" fill="CLR"/>';
+			html = html + template.replace(/CX/,c.cx).replace(/CY/,c.cy).replace(/RX/,c.rx).replace(/RY/,c.ry)
+			.replace(/CLR/,c.colour);	
+			return html;
+		};
+
+		var elipseHtml = ellipse.reduce(appendHTML_elipse ,'');	
+		$('#mainContent').append('<svg width="600",height="500">'+elipseHtml+'</svg>');
+
+		var moveSelf = function(){
+			$(this).attr('cx',+$(this).attr('cx')+100);
+		};
+
+
+		var moveIt = function(){
+			$('circle').each(moveSelf);
+		};
+		$('#move').click(moveIt);
+
+
+		var moveSelfBack = function(){
+			$(this).attr('cx',+$(this).attr('cx')-100);
+		};
+
+
+		var moveIt = function(){
+			$('circle').each(moveSelfBack);
+		};
+		$('#moveb').click(moveIt);
+
+	</script>
+
+
+</body>
+</html>

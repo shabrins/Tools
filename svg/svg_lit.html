@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+   </head>
+   <body>
+     <script type="text/javascript">
+
+    var dataAarray = [20,20,20,20,20];
+    var greatestNum = dataAarray.reduce(function(a,b){return a>b?a:b;})
+    var width = "1000";
+    var height = "1000";
+
+    var widthScale = d3.scale.linear()
+                       .domain([100,0])
+                       .range([width,0]);
+
+    var color = d3.scale.linear()
+                  .domain([0,100])
+                  .range(["red","blue"]);
+
+    var axis = d3.svg.axis()
+                 .ticks(5)
+                 .scale(widthScale);
+
+
+    var canvas =  d3.select("body")
+       .append("svg")
+       .attr("width",width)
+       .attr("height",height)
+       .append("g")
+       .attr("transform", "translate(50,50)");
+
+    var bars = canvas.selectAll("rect")
+                     .data(dataAarray)
+                     .enter()
+                          .append("rect")
+                          .attr("height" , 20)
+                          .attr("width" ,  function (d){ return widthScale(d)})
+                          .attr("fill", function(d){return color(d)})
+                          .attr("y" , function(d,index){ return index * 100 })
+
+
+                          bars.data(dataAarray)
+     .transition().duration(2000).delay(200)
+     .attr("width", function(d) {return 20 * d; } )
+
+
+     
+    canvas.append("g")
+          .attr("transform","translate(0,500)")
+          .call(axis);
+
+     </script>
+      <rect x="150" y="20" width="60" height="60" fill="blue">
+    <animateTransform attributeType="xml"
+              attributeName="transform"
+              type="rotate"
+              from="0 180 50"
+              to="360 180 50"
+              dur="4s"
+              repeatCount="indefinite" />
+  </rect>
+   </body>
+ </html>
+
+  
